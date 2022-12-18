@@ -35,29 +35,36 @@
 </head>
 <body style="margin: 0;padding: 0;border: 0;">
     <nav class="top-0 absolute z-50 w-full p-10 lg:p-16">
-        <div class="container mx-auto flex justify-between items-center">
-            <div class="flex-none">
-                <a href=""><img class="w-42" src="logo.svg" alt="logo" /></a>
+        <div class="container mx-auto flex flex-col lg:flex-row lg:justify-between lg:items-center">
+            <div class="flex flex-row justify-between">
+                <div class="flex-none">
+                    <img class="w-42" src="{% static 'images/logo.svg' %}" alt="logo" />
+                </div>
+                <div>
+                    <a class="block lg:hidden cursor-pointer text-5xl" onClick="ToggleNav('nav')">=</a>
+                </div>
             </div>
-
-            <ul class="flex flex-row ml-auto text-2xl text-slate-800 items-center space-x-8
-                        whitespace-nowrap font-light lg:text-lg lg:space-x-14">
-                <li>
-                    <a href="">
-                        <span>Features</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                        <span>Team</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="">
-                        Sign In
-                    </a>
-                </li>
-            </ul>
+            <div id="nav" class="hidden lg:block">
+                <ul
+                    class="flex flex-col lg:flex-row ml-auto text-2xl text-slate-800 space-x-0 space-y-4 py-4 text-right
+                            whitespace-nowrap font-light lg:text-lg lg:space-x-14 lg:space-y-0 lg:py-0 lg:text-left overflow-hidden">
+                    <li>
+                        <a href="">
+                            <span>Features</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <span>Team</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <span>Sign In</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
 
@@ -311,6 +318,10 @@
         ev.preventDefault();
         document.getElementById(inputBoxID).classList.toggle("error");
         document.getElementById(errorMessageID).classList.toggle("hidden");
+    }
+    function ToggleNav(collapseID) {
+        document.getElementById(collapseID).classList.toggle("hidden");
+        document.getElementById(collapseID).classList.toggle("block");
     }
 </script>
 </html>
