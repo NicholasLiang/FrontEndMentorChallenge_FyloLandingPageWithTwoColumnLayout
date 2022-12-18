@@ -1,0 +1,315 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontend Mentor Challenge - Product Preview Card Component</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+        .attribution {
+            font-size: 11px;
+            text-align: center;
+        }
+    
+        .attribution a {
+            color: hsl(228, 45%, 44%);
+        }
+
+        html {
+            scrollbar-width: none;
+        }
+        body {
+            -ms-overflow-style: none;
+        }
+        body::-webkit-scrollbar{
+            display: none;
+        }
+
+        .error {
+            border-width: 1px;
+            border-color: red !important; 
+        }
+    </style>
+</head>
+<body style="margin: 0;padding: 0;border: 0;">
+    <nav class="top-0 absolute z-50 w-full p-10 lg:p-16">
+        <div class="container mx-auto flex justify-between items-center">
+            <div class="flex-none">
+                <a href=""><img class="w-42" src="logo.svg" alt="logo" /></a>
+            </div>
+
+            <ul class="flex flex-row ml-auto text-2xl text-slate-800 items-center space-x-8
+                        whitespace-nowrap font-light lg:text-lg lg:space-x-14">
+                <li>
+                    <a href="">
+                        <span>Features</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        <span>Team</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="">
+                        Sign In
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mx-auto mt-80 block lg:mt-52 lg:flex lg:flex-row-reverse">
+        <div class="w-11/12 mx-auto lg:w-full">
+            <img src="illustration-1.svg" alt="illustration1" />
+        </div>
+        <div class="block w-full flew-col py-20 lg:flex lg:py-16 pr-15">
+            <div class="block">
+                <h1
+                    class="text-5xl lg:text-4xl font-sans text-center leading-normal lg:leading-relaxed font-bold text-slate-800 lg:text-left">
+                    All your files in one secure location, accessible anywhere.
+                </h1>
+                <form class="mx-auto px-2 py-16 lg:py-2 lg:px-0">
+                    <p class="text-3xl lg:text-lg text-center font-normal leading-snug text-slate-800 lg:text-left">
+                        Fylo stores your most important files in one secure location.
+                        Access them wherever you need, share and collaborate with friends,
+                        family, and co-workers.
+                    </p>
+                    <div class="space-x-0 block mt-0 lg:flex lg:flex-row lg:space-x-4 lg:mt-4">
+                        <input id="input-box-1" class="w-full text-2xl font-light border-2 border-black rounded-md py-5 px-10 mt-16
+                                    lg:text-sm lg:border lg:py-3 lg:rounded-sm lg:w-2/4 lg:mt-0 lg:px-4" type="text"
+                            placeholder="Enter you email.." />
+                        <input class="w-full mt-9 text-3xl font-bold text-white py-6 
+                                        rounded-md shadow-lg bg-blue-600 hover:bg-blue-400
+                                        lg:text-sm lg:py-1 lg:mt-0 lg:w-1/3 lg:rounded-sm lg:font-normal lg:shadow-md"
+                            type="submit" value="Get Started" onClick="toggleError(event, 'input-box-1', 'error-message-1')" />
+                    </div>
+                    <div class="hidden py-4 lg:py-1" id="error-message-1"><p class="text-lg lg:text-base text-red-500">Please check your email</p></div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="w-full mt-10 lg:mt-40">
+        <img class="w-full lg:hidden" src="bg-curve-mobile.svg" alt="bg-curve-mobile" />
+        <img class="hidden lg:block" src="bg-curve-desktop.svg" alt="bg-curve-desktop" />
+    </div>
+
+    <div class="w-full bg-slate-50 pt-20 pb-8 lg:pb-14">
+        <div class="w-full lg:container lg:flex lg:flex-row-reverse mx-auto">
+            <div class="w-10/12 mx-auto lg:w-4/6">
+                <img src="illustration-2.svg" alt="illustration2" />
+            </div>
+            <div class="py-36 space-y-14 lg:py-0 lg:space-y-4">
+                <div>
+                    <h1 class="mb-0 font-normal text-4xl text-center 
+                            lg:mb-10 lg:text-left lg:font-bold">
+                        Stay productive, wherever you are
+                    </h1>
+                </div>
+                <div class="px-12 text-2xl font-light text-gray-600 space-y-12 leading-normal 
+                            lg:px-0 lg:pr-48 lg:text-base lg:text-left lg:font-normal lg:space-y-4 lg:text-gray-800">
+                    <p>
+                        Never let location be an issue when accessing your files. Fylo has you
+                        covered for all of your file storage needs.
+                    </p>
+                    <p>
+                        Securely share files and folders with friends, family and colleagues
+                        for live collaboration. No email attachments required!
+                    </p>
+                </div>
+
+                <div class="text-center align-middle lg:text-left">
+                    <a class="text-2xl font-light space-x-2 py-4 text-emerald-600 hover:text-emerald-300 border-b-2 border-emerald-500 hover:border-emerald-300
+                            lg:text-base lg:font-normal lg:py-1 lg:space-x-1 lg:border-b" href="">
+                        <div class="inline-block">See how Fylo works</div>
+                        <img class="w-8 inline-block lg:w-4" src="icon-arrow.svg" alt="arrow" />
+                    </a>
+                </div>
+
+                <div class="py-0 lg:py-8">
+                    <div class="flex-row space-y-6 w-3/4 mx-auto py-12 px-16 bg-white rounded-lg 
+                                shadow-[5px_5px_8px_8px_rgba(0,0,0,0.02)]
+                                lg:py-8 lg:px-8 lg:mx-0 lg:w-1/2 lg:space-y-4
+                                lg:shadow-[-2px_-2px_2px_2px_rgba(0,0,0,0.02)]">
+                        <div class="">
+                            <img class="w-5 lg:w-4" src="icon-quotes.svg" alt="quotes" />
+                        </div>
+                        <div>
+                            <p class="text-xl leading-relaxed font-light text-slate-800 tracking-normal
+                                    lg:text-sm lg:font-normal lg:tracking-wide">
+                                Fylo has improved our team productivity by an order of magnitude. Since
+                                making the switch our team has become a well-oiled collaboration machine.
+                            </p>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div>
+                                <img class="w-12 rounded-full lg:w-8" src="avatar-testimonial.jpg"
+                                    alt="avatar" />
+                            </div>
+                            <div class="space-y-1">
+                                <p class="text-base font-bold tracking-wider text-slate-800 lg:text-xs">
+                                    Kyle Burton
+                                </p>
+                                <p class="font-light text-sm lg:text-xs">
+                                    Founder & CEO, Huddle
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="w-full flex bg-slate-500 text-white">
+        <div class="container mx-auto pt-28 pb-36 space-x-0
+                    lg:flex lg:flex-row lg:pt-24 lg:pb-16 lg:space-x-48">
+            <div class="w-full">
+                <h1 class="text-4xl text-center leading-normal font-medium 
+                        lg:text-3xl lg:text-left">
+                    Get early access today
+                </h1>
+                <p class="text-3xl text-center font-light leading-snug p-8 
+                        lg:text-lg lg:text-left lg:p-0 lg:pt-4">
+                    It only takes a minute to sign up and our free starter tier is extremely generous.
+                    If you have any questions, our support team would be happy to help you.
+                </p>
+            </div>
+            <div class="w-full p-0 lg:px-10">
+                <form class="w-3/4 mx-auto lg:w-full">
+                    <input id="input-box-2" class="w-full text-xl font-light rounded-sm py-4 px-6 mt-3
+                                lg:text-sm lg:rounded-md" type="text" placeholder="email@example.com" />
+                    <div class="hidden py-4 lg:py-1" id="error-message-2">
+                        <p class="text-base lg:text-sm text-white">Please check your email</p>
+                    </div>
+                    <input class="w-full text-xl font-medium text-white py-4 mt-5
+                                lg:text-sm lg:w-7/12 xl:w-5/12
+                            rounded-sm shadow-md bg-blue-600 hover:bg-blue-400" 
+                            type="submit" value="Get Started For Free" onClick="toggleError(event, 'input-box-2', 'error-message-2')" />
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="w-full flex-row bg-slate-900 text-white">
+        <div class="container block mx-auto py-14 lg:flex">
+            <div class="flex-col w-full">
+                <div class="w-96 py-14 lg:w-44 lg:py-5">
+                    <svg width="100%" viewBox="0 0 166 49" xmlns="http://www.w3.org/2000/svg"
+                        xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <defs>
+                            <path id="a" d="M.014.03h93.96v48.29H.015z" />
+                        </defs>
+                        <g fill="none" fill-rule="evenodd">
+                            <path
+                                d="M0 14.13v.123l27.95 13.13L56 14.209v-.033L27.95 1 0 14.13zm10.077.062L27.95 5.795l17.877 8.397-17.877 8.396-17.874-8.396zM27.95 32.483L0 19.55v4.784l27.95 12.964L56 24.289v-4.784L27.95 32.483zm0 9.703L0 29.25v4.783L27.95 47 56 33.99v-4.784l-28.05 12.98z"
+                                fill="#fff" />
+                            <g transform="translate(72)">
+                                <mask id="b" fill="#fff">
+                                    <use xlink:href="#a" />
+                                </mask>
+                                <path
+                                    d="M87.56 24.152a8.1 8.1 0 0 0-2.161-5.573 7.259 7.259 0 0 0-2.34-1.673 6.864 6.864 0 0 0-2.85-.601c-1.01 0-1.961.2-2.852.601a7.257 7.257 0 0 0-2.34 1.673 8.102 8.102 0 0 0-2.16 5.574 8.102 8.102 0 0 0 2.16 5.573 7.257 7.257 0 0 0 2.34 1.672 6.864 6.864 0 0 0 2.851.602c1.01 0 1.96-.2 2.852-.602a7.259 7.259 0 0 0 2.339-1.672 8.1 8.1 0 0 0 2.16-5.574zm6.415 0c0 1.932-.357 3.723-1.07 5.373a13.098 13.098 0 0 1-2.94 4.28c-1.247 1.205-2.71 2.156-4.388 2.854-1.678.699-3.468 1.048-5.369 1.048-1.9 0-3.683-.349-5.346-1.048a13.863 13.863 0 0 1-4.366-2.876 13.351 13.351 0 0 1-2.94-4.302c-.713-1.65-1.07-3.426-1.07-5.329 0-1.873.364-3.634 1.092-5.284a13.92 13.92 0 0 1 2.962-4.325 13.671 13.671 0 0 1 4.367-2.898 13.552 13.552 0 0 1 5.301-1.048c1.901 0 3.69.35 5.369 1.048 1.678.698 3.14 1.65 4.388 2.854 1.248 1.204 2.228 2.638 2.94 4.302.713 1.665 1.07 3.449 1.07 5.351zM64.258 36.905a8.6 8.6 0 0 1-1.715.58c-.638.148-1.3.222-1.982.222a9.84 9.84 0 0 1-2.74-.379 6.003 6.003 0 0 1-2.295-1.226c-.653-.565-1.173-1.3-1.56-2.207-.385-.907-.578-2-.578-3.277V.029h6.549v29.474c0 1.07.215 1.806.646 2.207.43.401.943.602 1.537.602.742 0 1.455-.223 2.138-.669v5.262zM50.492 11.22L38.908 41.854c-.861 2.289-1.99 3.939-3.386 4.95-1.396 1.01-3.06 1.515-4.99 1.515-.297 0-.623-.022-.98-.066a7.352 7.352 0 0 1-1.025-.201l-2.138-5.975a8.486 8.486 0 0 0 1.56.557c.534.134 1.039.201 1.514.201 1.01 0 1.93-.23 2.762-.691.832-.46 1.47-1.315 1.916-2.564l.891-2.586-9.935-25.773h6.995l5.925 16.588 5.57-16.588h6.905zM23.538 7.342H6.786v8.294h16.529v5.618H6.785v15.784H.015V1.412h23.524v5.93z"
+                                    fill="#fff" mask="url(#b)" />
+                            </g>
+                        </g>
+                    </svg>
+                </div>
+
+                <div class="flex-col text-3xl font-light space-y-12 py-8
+                            lg:text-base lg:space-y-8">
+                    <div class="flex space-x-10 lg:space-x-2" href="">
+                        <img class="w-10 inline-block lg:w-6" src="icon-phone.svg" alt="phone" />
+                        <div class="inline-block">Phone: +1-543-123-4567</div>
+                    </div>
+                    <div class="flex space-x-10 lg:space-x-2" href="">
+                        <img class="w-10 inline-block lg:w-6" src="icon-email.svg" alt="email" />
+                        <div class="inline-block">example@fylo.com</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex-col text-3xl font-light py-10 lg:py-16 w-full lg:text-base">
+                <ul class="flex-col py-14 space-y-8">
+                    <li>
+                        <a class="hover:text-blue-400" href="">
+                            <span>About Us</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="hover:text-blue-400" href="">
+                            <span>Jobs</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="hover:text-blue-400" href="">
+                            <span>Press</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="hover:text-blue-400" href="">
+                            <span>Blog</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="flex-col text-3xl font-light py-10 lg:py-16 w-full lg:text-base">
+                <ul class="flex-col py-14 space-y-8">
+                    <li>
+                        <a class="hover:text-blue-400" href="">
+                            <span>Contact Us</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="hover:text-blue-400" href="">
+                            <span>Terms</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="hover:text-blue-400" href="">
+                            <span>Privacy</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="flex-col text-5xl font-light py-10 lg:py-16 w-full lg:text-base">
+                <ul class="flex flex-row lg:flex-col py-14 space-y-0 space-x-10 lg:space-y-8 lg:space-x-0 justify-center">
+                    <li>
+                        <a class="hover:text-blue-400" href="">
+                            <span>O</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="hover:text-blue-400" href="">
+                            <span>O</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="hover:text-blue-400" href="">
+                            <span>O</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p class="attribution">
+            Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+            Coded by <a href="https://github.com/NicholasLiang">Nicholas Liang</a>.
+        </p>
+    </footer>
+
+</body>
+
+<script>
+    function toggleError(ev, inputBoxID, errorMessageID) {
+        ev.preventDefault();
+        document.getElementById(inputBoxID).classList.toggle("error");
+        document.getElementById(errorMessageID).classList.toggle("hidden");
+    }
+</script>
+</html>
